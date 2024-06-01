@@ -112,4 +112,3 @@ def data_cleaning(df):
 
 a = data_collection()
 a,b,c,d,e,f,g = data_cleaning(a)
-print(f)
