@@ -74,7 +74,9 @@ def data_cleaning(df):
     df1 = df1[df1["quantity tons"] > 0]
 
     encoder = ce.OrdinalEncoder(cols=[ 'status', 'item type'])
-    df1 = encoder.fit_transform(df1)
+    df1 = encoder.fit_transform(df1) 
+
+    df1 = outlier_handling(df1)
 
     df1_min = []
     for i in ['quantity tons','thickness', 'width','selling_price']:
@@ -98,9 +100,7 @@ def data_cleaning(df):
     
     df1_stddev = []
     for i in ['quantity tons','thickness', 'width','selling_price']:
-        df1_stddev.append(df1[i].std()) 
-
-    df1 = outlier_handling(df1)
+        df1_stddev.append(df1[i].std())
 
     df1["quantity tons"] = np.log10(df1["quantity tons"])
     df1["thickness"] = np.log10(df1["thickness"])
