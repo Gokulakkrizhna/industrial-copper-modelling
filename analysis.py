@@ -119,4 +119,3 @@ def eda_analysis_st(df1):
 s1,s2 = statistical_analysis(a,b,c,d,e,f,g)
 e1,e2,e3,e4,e5,e6,e7,e8,e9 = eda_analysis_sp(a)
 E1,E2,E3,E4,E5,E6,E7,E8,E9 = eda_analysis_st(a)
-
